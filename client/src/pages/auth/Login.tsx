@@ -77,10 +77,13 @@ const Login = () => {
               Login
             </Button>
           )}
+          <div className="mt-4 flex justify-center">
+            <Link to="/forgot-password" className="text-blue-500">Forgot Password</Link>
+          </div>
         </div>
         <Separator />
-        <p className="mt-2">
-            Don't have an aacount?{" "}
+        <p className="mt-2 flex justify-center">
+            Don't have an account?{" "}
             <Link to="/signup" className="text-blue-500">Sign Up</Link>
         </p>
       </form>

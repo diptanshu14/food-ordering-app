@@ -111,7 +111,7 @@ const Signup = () => {
         </div>
         <Separator />
         <p className="mt-2">
-            Already have an aacount?{" "}
+            Already have an account?{" "}
             <Link to="/login" className="text-blue-500">Login</Link>
         </p>
       </form>
