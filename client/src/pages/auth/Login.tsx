@@ -1,14 +1,10 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { LoginInputState, userLoginSchema } from "@/schema/userSchema"
 import { Separator } from "@radix-ui/react-separator"
 import { Loader2, LockKeyhole, Mail } from "lucide-react"
 import { ChangeEvent, FormEvent, useState } from "react"
 import { Link } from "react-router-dom"
-
-type LoginInputState = {
-    email: string
-    password: string
-}
 
 const Login = () => {
 
@@ -16,6 +12,7 @@ const Login = () => {
     email: "",
     password: ""
   })
+  const [errors, setErrors] = useState<Partial<LoginInputState>>({})
 
   const changeEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -24,9 +21,16 @@ const Login = () => {
 
   const loginSubmitHandler = (e: FormEvent) => {
     e.preventDefault()
+    // form validation check
+    const result = userLoginSchema.safeParse(input)
+    if (!result.success) {
+      const fieldErrors = result.error.formErrors.fieldErrors
+      setErrors(fieldErrors as Partial<LoginInputState>)
+      return
+    }
     console.log(input)
   }
-  
+  // api implemenation
   const loading = false
 
   return (
@@ -46,6 +50,7 @@ const Login = () => {
               className="pl-10 focus-visible:ring-0"
             />
             <Mail className="absolute inset-y-2 left-2 text-gray-500 pointer-events-none"/>
+            {  errors && <span className="text-xs text-red-500">{errors.email}</span>  }
           </div>
         </div>
         <div className="mb-4">
@@ -59,6 +64,7 @@ const Login = () => {
               className="pl-10 focus-visible:ring-0"
             />
             <LockKeyhole className="absolute inset-y-2 left-2 text-gray-500 pointer-events-none"/>
+            {  errors && <span className="text-xs text-red-500">{errors.password}</span>  }
           </div>
         </div>
         <div className="mb-10">
