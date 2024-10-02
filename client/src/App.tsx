@@ -5,11 +5,18 @@ import Signup from "./pages/auth/Signup"
 import ForgotPassword from "./pages/auth/ForgotPassword"
 import ResetPassword from "./pages/auth/ResetPassword"
 import VerifyEmail from "./pages/auth/VerifyEmail"
+import HomePage from "./pages/HomePage"
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />
+      }
+    ]
   },
   {
     path: "/login",
