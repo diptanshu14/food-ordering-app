@@ -6,6 +6,7 @@ import ForgotPassword from "./pages/auth/ForgotPassword"
 import ResetPassword from "./pages/auth/ResetPassword"
 import VerifyEmail from "./pages/auth/VerifyEmail"
 import HomePage from "./pages/HomePage"
+import ProfilePage from "./pages/ProfilePage"
 
 const appRouter = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />
+      },
+      {
+        path: "/profile",
+        element: <ProfilePage />
       }
     ]
   },
