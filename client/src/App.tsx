@@ -10,6 +10,7 @@ import ProfilePage from "./pages/ProfilePage"
 import SearchPage from "./pages/SearchPage"
 import RestaurantPage from "./pages/RestaurantPage"
 import Cart from "./pages/Cart"
+import Restaurant from "./pages/admin/Restaurant"
 
 const appRouter = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />
+      },
+      {
+        path: "/admin/restaurant",
+        element: <Restaurant />
       }
     ]
   },
