@@ -8,6 +8,7 @@ import VerifyEmail from "./pages/auth/VerifyEmail"
 import HomePage from "./pages/HomePage"
 import ProfilePage from "./pages/ProfilePage"
 import SearchPage from "./pages/SearchPage"
+import RestaurantPage from "./pages/RestaurantPage"
 
 const appRouter = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/search/:text",
         element: <SearchPage />
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantPage />
       }
     ]
   },
