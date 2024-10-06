@@ -7,6 +7,7 @@ import ResetPassword from "./pages/auth/ResetPassword"
 import VerifyEmail from "./pages/auth/VerifyEmail"
 import HomePage from "./pages/HomePage"
 import ProfilePage from "./pages/ProfilePage"
+import SearchPage from "./pages/SearchPage"
 
 const appRouter = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/profile",
         element: <ProfilePage />
+      },
+      {
+        path: "/search/:text",
+        element: <SearchPage />
       }
     ]
   },
