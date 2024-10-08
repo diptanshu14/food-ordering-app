@@ -12,6 +12,8 @@ import RestaurantPage from "./pages/RestaurantPage"
 import Cart from "./pages/Cart"
 import Restaurant from "./pages/admin/Restaurant"
 import AddMenu from "./pages/admin/AddMenu"
+import Orders from "./pages/admin/Orders"
+import Success from "./pages/Success"
 
 const appRouter = createBrowserRouter([
   {
@@ -39,12 +41,20 @@ const appRouter = createBrowserRouter([
         element: <Cart />
       },
       {
+        path: "/order/status",
+        element: <Success />
+      },
+      {
         path: "/admin/restaurant",
         element: <Restaurant />
       },
       {
         path: "/admin/menu",
         element: <AddMenu />
+      },
+      {
+        path: "/admin/orders",
+        element: <Orders />
       }
     ]
   },
