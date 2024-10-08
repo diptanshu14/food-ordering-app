@@ -11,6 +11,7 @@ import SearchPage from "./pages/SearchPage"
 import RestaurantPage from "./pages/RestaurantPage"
 import Cart from "./pages/Cart"
 import Restaurant from "./pages/admin/Restaurant"
+import AddMenu from "./pages/admin/AddMenu"
 
 const appRouter = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/admin/restaurant",
         element: <Restaurant />
+      },
+      {
+        path: "/admin/menu",
+        element: <AddMenu />
       }
     ]
   },
