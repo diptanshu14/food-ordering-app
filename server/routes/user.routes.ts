@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express"
+import express from "express"
 import { login, signup } from "../controllers/user.controller"
 
 const router = express.Router()
